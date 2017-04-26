@@ -23,19 +23,19 @@ import nz.ac.waikato.modeljunit.VerboseListener;
 import nz.ac.waikato.modeljunit.coverage.ActionCoverage;
 import nz.ac.waikato.modeljunit.coverage.StateCoverage;
 import nz.ac.waikato.modeljunit.coverage.TransitionCoverage;
-import se.chalmers.dat261.model.CodeCompletionModel;
+import se.chalmers.dat261.model.DeadCodeModel;
 
 import javax.swing.*;
 
-public class CodeCompletionTest extends TestCase {
+public class DeadCodeTest extends TestCase {
   public void testCompletion() throws Exception {
     // Everything done on the fixture needs to be on the UI thread. ModelJUnit will use it's own threads, so we need some extra work to end
     // up on the right thread. Note that the below is non-blocking.
     SwingUtilities.invokeAndWait(() -> {
-      CodeCompletionModel fireModel = null;
+      DeadCodeModel deadCodeModel = null;
       try {
-        fireModel = new CodeCompletionModel();
-        Tester tester = new RandomTester(fireModel);
+        deadCodeModel = new DeadCodeModel();
+        Tester tester = new RandomTester(deadCodeModel);
 
         tester.buildGraph();
         tester.addListener(new VerboseListener());
@@ -53,7 +53,7 @@ public class CodeCompletionTest extends TestCase {
       }
       finally {
         try {
-          fireModel.cleanup();
+          // deadCodeModel.cleanup();
         }
         catch (Exception e) {
           e.printStackTrace();
