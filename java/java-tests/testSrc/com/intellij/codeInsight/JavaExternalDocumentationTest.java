@@ -114,7 +114,7 @@ public class JavaExternalDocumentationTest extends PlatformTestCase {
     doTest("class Foo {{ new com.jetbrains.LinkBetweenMethods().<caret>m1(); }}");
   }
 
-  private void doTest(String text) throws Exception {
+  protected void doTest(String text) throws Exception {
     String actualText = getDocumentationText(text);
     String expectedText = StringUtil.convertLineSeparators(FileUtil.loadFile(getDataFile(getTestName(false) + ".html")));
     assertEquals(expectedText, replaceBaseUrlWithPlaceholder(actualText));
