@@ -18,5 +18,7 @@
     <orderEntry type="library" name="Xerces" level="project" />
     <orderEntry type="library" name="XmlBeans" level="project" />
     <orderEntry type="module" module-name="RegExpSupport" exported="" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

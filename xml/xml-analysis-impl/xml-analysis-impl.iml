@@ -13,6 +13,7 @@
     <orderEntry type="module" module-name="core-impl" />
     <orderEntry type="module" module-name="xml-analysis-api" exported="" />
     <orderEntry type="module" module-name="projectModel-api" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>
-
