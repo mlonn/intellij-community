@@ -40,5 +40,7 @@
     <orderEntry type="module" module-name="external-system-api" />
     <orderEntry type="module" module-name="RegExpSupport" />
     <orderEntry type="module" module-name="external-system-impl" scope="TEST" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

@@ -23,5 +23,7 @@
     <orderEntry type="module" module-name="eclipse-jps-plugin" />
     <orderEntry type="module" module-name="common-eclipse-util" />
     <orderEntry type="module" module-name="testExtensions" scope="TEST" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

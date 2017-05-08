@@ -14,6 +14,7 @@
     <orderEntry type="module" module-name="jps-model-impl" scope="TEST" />
     <orderEntry type="module" module-name="appEngine-runtime" />
     <orderEntry type="module" module-name="jps-serialization-tests" scope="TEST" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>
-

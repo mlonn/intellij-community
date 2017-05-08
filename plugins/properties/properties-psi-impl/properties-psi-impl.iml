@@ -17,6 +17,7 @@
     <orderEntry type="module" module-name="structure-view-impl" />
     <orderEntry type="module" module-name="analysis-impl" />
     <orderEntry type="module" module-name="lang-impl" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>
-

@@ -52,5 +52,7 @@
     </orderEntry>
     <orderEntry type="module" module-name="maven" scope="TEST" />
     <orderEntry type="module" module-name="maven3-server-common" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

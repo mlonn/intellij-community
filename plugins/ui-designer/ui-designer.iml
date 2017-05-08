@@ -30,6 +30,8 @@
     <orderEntry type="module" module-name="xml" />
     <orderEntry type="module" module-name="properties-psi-api" />
     <orderEntry type="library" scope="TEST" name="assertJ" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
   <component name="copyright">
     <Base>

@@ -18,5 +18,7 @@
     <orderEntry type="module" module-name="execution-openapi" />
     <orderEntry type="module" module-name="openapi" />
     <orderEntry type="module" module-name="compiler-impl" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

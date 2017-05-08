@@ -17,5 +17,7 @@
     <orderEntry type="module" module-name="compiler-impl" />
     <orderEntry type="module" module-name="devkit" />
     <orderEntry type="module" module-name="dom-impl" scope="TEST" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

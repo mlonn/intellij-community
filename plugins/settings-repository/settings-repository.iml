@@ -52,5 +52,7 @@
     <orderEntry type="library" name="miglayout-swing" level="project" />
     <orderEntry type="module" module-name="credential-store" />
     <orderEntry type="library" name="Guava" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

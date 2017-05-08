@@ -44,5 +44,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="maven-artifact-resolver-common" exported="" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

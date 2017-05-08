@@ -11,5 +11,7 @@
     <orderEntry type="module" module-name="junit_rt" />
     <orderEntry type="library" scope="PROVIDED" name="TestNG" level="project" />
     <orderEntry type="library" name="Coverage" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

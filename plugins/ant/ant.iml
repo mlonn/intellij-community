@@ -28,6 +28,8 @@
     <orderEntry type="module" module-name="ant-jps-plugin" />
     <orderEntry type="module" module-name="dom-impl" />
     <orderEntry type="module" module-name="properties-psi-api" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
   <component name="copyright">
     <Base>
@@ -35,4 +37,3 @@
     </Base>
   </component>
 </module>
-

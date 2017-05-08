@@ -17,5 +17,7 @@
     <orderEntry type="module" module-name="lang-impl" exported="" />
     <orderEntry type="module" module-name="vcs-impl" />
     <orderEntry type="module" module-name="dvcs-api" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

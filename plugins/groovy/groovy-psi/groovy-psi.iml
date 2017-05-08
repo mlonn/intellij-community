@@ -25,5 +25,7 @@
     <orderEntry type="module" module-name="java-structure-view" />
     <orderEntry type="module" module-name="properties-psi-impl" />
     <orderEntry type="module" module-name="properties-psi-api" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

@@ -28,7 +28,7 @@
           <root url="jar://$MODULE_DIR$/../lib/gradle-native-3.5.jar!/" />
           <root url="jar://$MODULE_DIR$/../tooling-extension-api/lib/gradle-build-init-3.5.jar!/" />
           <root url="jar://$MODULE_DIR$/../tooling-extension-api/lib/gradle-ide-3.5.jar!/" />
-	  <root url="jar://$MODULE_DIR$/../tooling-extension-api/lib/gradle-dependency-management-3.5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../tooling-extension-api/lib/gradle-dependency-management-3.5.jar!/" />
           <root url="jar://$MODULE_DIR$/../tooling-extension-api/lib/gradle-language-java-3.5.jar!/" />
           <root url="jar://$MODULE_DIR$/../tooling-extension-api/lib/gradle-language-jvm-3.5.jar!/" />
           <root url="jar://$MODULE_DIR$/../tooling-extension-api/lib/gradle-platform-base-3.5.jar!/" />
@@ -50,5 +50,7 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

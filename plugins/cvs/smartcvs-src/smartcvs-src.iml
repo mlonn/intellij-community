@@ -9,6 +9,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="javacvs-src" />
     <orderEntry type="module" module-name="util" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
   <component name="copyright">
     <Base>
@@ -16,4 +18,3 @@
     </Base>
   </component>
 </module>
-

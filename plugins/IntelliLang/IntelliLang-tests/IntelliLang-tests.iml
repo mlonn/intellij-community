@@ -12,5 +12,7 @@
     <orderEntry type="module" module-name="IntelliLang-xml" />
     <orderEntry type="module" module-name="xml" />
     <orderEntry type="module" module-name="IntelliLang-java" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

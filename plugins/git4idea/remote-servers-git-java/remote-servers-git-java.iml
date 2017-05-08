@@ -10,5 +10,7 @@
     <orderEntry type="module" module-name="remote-servers-git" />
     <orderEntry type="module" module-name="idea-ui" />
     <orderEntry type="module" module-name="openapi" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>
