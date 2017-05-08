@@ -23,5 +23,7 @@
     <orderEntry type="library" scope="TEST" name="KotlinJavaRuntime" level="project" />
     <orderEntry type="library" scope="TEST" name="assertJ" level="project" />
     <orderEntry type="module" module-name="built-in-server" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

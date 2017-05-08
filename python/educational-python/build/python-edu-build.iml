@@ -12,5 +12,7 @@
     <orderEntry type="module" module-name="build" />
     <orderEntry type="module" module-name="buildScripts" />
     <orderEntry type="module" module-name="python-community-build" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

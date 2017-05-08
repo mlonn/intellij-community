@@ -12,5 +12,7 @@
     <orderEntry type="module" module-name="platform-impl" />
     <orderEntry type="module" module-name="xdebugger-api" />
     <orderEntry type="module" module-name="diff-impl" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

@@ -23,5 +23,7 @@
     <orderEntry type="library" scope="TEST" name="Mocks" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest" level="project" />
     <orderEntry type="module" module-name="xml-openapi" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

@@ -14,5 +14,7 @@
     <orderEntry type="library" exported="" scope="TEST" name="assertJ" level="project" />
     <orderEntry type="library" scope="TEST" name="memoryfilesystem" level="project" />
     <orderEntry type="library" scope="TEST" name="snakeyaml" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

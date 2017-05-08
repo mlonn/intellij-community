@@ -17,5 +17,7 @@
     <orderEntry type="module" module-name="icons" />
     <orderEntry type="library" name="automaton" level="project" />
     <orderEntry type="module" module-name="projectModel-api" exported="" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

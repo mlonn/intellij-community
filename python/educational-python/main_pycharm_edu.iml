@@ -18,5 +18,7 @@
     <orderEntry type="module" module-name="Edu-Python" />
     <orderEntry type="module" module-name="hg4idea" />
     <orderEntry type="module" module-name="ipnb" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

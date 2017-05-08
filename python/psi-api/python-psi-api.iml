@@ -12,6 +12,7 @@
     <orderEntry type="module" module-name="projectModel-api" />
     <orderEntry type="module" module-name="core-impl" />
     <orderEntry type="library" name="Guava" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>
-

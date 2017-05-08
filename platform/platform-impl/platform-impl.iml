@@ -49,5 +49,7 @@
     <orderEntry type="module" module-name="credential-store" scope="RUNTIME" />
     <orderEntry type="library" exported="" name="StreamEx" level="project" />
     <orderEntry type="library" name="jediterm-pty" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

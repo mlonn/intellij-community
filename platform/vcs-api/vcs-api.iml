@@ -12,5 +12,7 @@
     <orderEntry type="module" module-name="vcs-api-core" exported="" />
     <orderEntry type="module" module-name="diff-api" exported="" />
     <orderEntry type="library" name="StreamEx" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

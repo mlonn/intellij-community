@@ -34,5 +34,7 @@
     <orderEntry type="module" module-name="openapi" />
     <orderEntry type="library" name="Guava" level="project" />
     <orderEntry type="module" module-name="built-in-server" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

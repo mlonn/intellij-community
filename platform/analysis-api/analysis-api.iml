@@ -13,5 +13,7 @@
     <orderEntry type="module" module-name="core-api" />
     <orderEntry type="module" module-name="projectModel-api" />
     <orderEntry type="module" module-name="editor-ui-api" exported="" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

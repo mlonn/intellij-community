@@ -12,6 +12,7 @@
     <orderEntry type="module" module-name="IntelliLang" />
     <orderEntry type="module" module-name="python-community" />
     <orderEntry type="module" module-name="lang-impl" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>
-

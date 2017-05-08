@@ -22,5 +22,7 @@
     <orderEntry type="module" module-name="diff-impl" exported="" />
     <orderEntry type="module" module-name="vcs-log-api" />
     <orderEntry type="library" name="swingx" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

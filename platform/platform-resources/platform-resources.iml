@@ -10,5 +10,7 @@
     <orderEntry type="module" module-name="util" />
     <orderEntry type="module" module-name="lvcs-impl" scope="RUNTIME" />
     <orderEntry type="module" module-name="json" scope="RUNTIME" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

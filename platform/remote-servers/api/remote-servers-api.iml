@@ -10,6 +10,7 @@
     <orderEntry type="module" module-name="core-api" />
     <orderEntry type="module" module-name="lang-api" />
     <orderEntry type="module" module-name="remote-servers-agent-rt" exported="" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>
-

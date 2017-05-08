@@ -28,5 +28,7 @@
     <orderEntry type="module" module-name="java-impl" />
     <orderEntry type="module" module-name="openapi" />
     <orderEntry type="module" module-name="configuration-store-impl" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

@@ -13,6 +13,7 @@
     <orderEntry type="module" module-name="vcs-api" />
     <orderEntry type="module" module-name="extensions" />
     <orderEntry type="module" module-name="vcs-log-api" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>
-

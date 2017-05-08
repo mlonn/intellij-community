@@ -12,5 +12,7 @@
     <orderEntry type="module" module-name="python-community" />
     <orderEntry type="module" module-name="python-community-configure" />
     <orderEntry type="module" module-name="python-community-plugin-core" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>

@@ -11,6 +11,7 @@
     <orderEntry type="module" module-name="indexing-api" exported="" />
     <orderEntry type="module" module-name="projectModel-impl" />
     <orderEntry type="library" exported="" name="NanoXML" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>
-

@@ -17,5 +17,7 @@
     <orderEntry type="library" scope="TEST" name="Mocks" level="project" />
     <orderEntry type="module" module-name="analysis-api" exported="" />
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>
