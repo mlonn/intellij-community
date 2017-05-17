@@ -15,6 +15,8 @@
  */
 package com.intellij.codeInsight.completion;
 
+import com.intellij.codeInsight.editorActions.CodeBlockEndAction;
+import com.intellij.codeInsight.editorActions.CodeBlockUtil;
 import com.intellij.openapi.actionSystem.IdeActions;
 import se.chalmers.dat261.adapter.BaseAdapter;
 
@@ -29,6 +31,7 @@ public class CodeCompletionAdapter extends BaseAdapter {
    */
   public void addEmptyIfHead() {
     // <student code>
+    type("if()");
     // </student code>
   }
 
@@ -37,6 +40,7 @@ public class CodeCompletionAdapter extends BaseAdapter {
    */
   public void addStatement(String stmt) {
     // <student code>
+    type(stmt + "\n");
     // </student code>
   }
 
@@ -45,11 +49,11 @@ public class CodeCompletionAdapter extends BaseAdapter {
    */
   public void completeIfHead() {
     // <student code>
+    completeStatement();
     // </student code>
-
     addIfCondition();
-
     // <student code>
+    completeStatement();
     // </student code>
   }
 
@@ -68,12 +72,16 @@ public class CodeCompletionAdapter extends BaseAdapter {
    */
   public void exitCurrentBlock() {
     // <student code>
+    down();
+    type("\n");
     // </student code>
   }
 
   private static void completeStatement() {
-    // It's easiest to see what happens in differnet situation from the below line if you just try it out in the editor (e.g. make a line
-    // under this and start typing), you can look up what hotkey you have for the "complete statement" action in the keymap in the settings.
+    // It's easiest to see what happens in different situation from the below line if you just
+    // try it out in the editor (e.g. make a line
+    // under this and start typing), you can look up what hotkey you have for
+    // the "complete statement" action in the keymap in the settings.
     // For me the hotkey is set to <Shift+Ctrl+Enter>.
     // 1.
     // if()<Shift+Ctrl+Enter>
@@ -84,8 +92,11 @@ public class CodeCompletionAdapter extends BaseAdapter {
     // if(true) {
     //   int a = 3;
     // }
+    if (true) {
 
+    }
     // <student code>
+    invokeAction(IdeActions.ACTION_EDITOR_COMPLETE_STATEMENT);
     // </student code>
   }
 
@@ -102,7 +113,8 @@ public class CodeCompletionAdapter extends BaseAdapter {
     String expectedLine = "    if()\n";
     assertEquals(expectedLine, actualLine);
 
-    // You can use the debugger and set a breakpoint here, then use the Evaluate Expression <Shift+Alt+8> feature to try out carret movement
+    // You can use the debugger and set a breakpoint here, then use the Evaluate
+    // Expression <Shift+Alt+8> feature to try out caret movement
     // interactively, this is very helpful when designing your adapter!
     up();
     left();

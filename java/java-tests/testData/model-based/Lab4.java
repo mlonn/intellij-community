@@ -13,11 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-public class lab4 extends lab4Super {
+import java.io.File
+
+public class Lab4 extends lab4Super {
 
   @Override
   public int foo() {
      <caret>
+  }
+
+  public void multiImpl () {
+    File file = new File();
   }
   abstract void bar();
 }

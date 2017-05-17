@@ -16,13 +16,11 @@
 package se.chalmers.dat261;
 
 import junit.framework.TestCase;
-import nz.ac.waikato.modeljunit.RandomTester;
-import nz.ac.waikato.modeljunit.StopOnFailureListener;
-import nz.ac.waikato.modeljunit.Tester;
-import nz.ac.waikato.modeljunit.VerboseListener;
+import nz.ac.waikato.modeljunit.*;
 import nz.ac.waikato.modeljunit.coverage.ActionCoverage;
 import nz.ac.waikato.modeljunit.coverage.StateCoverage;
 import nz.ac.waikato.modeljunit.coverage.TransitionCoverage;
+import nz.ac.waikato.modeljunit.coverage.TransitionPairCoverage;
 import se.chalmers.dat261.model.CodeCompletionModel;
 import se.chalmers.dat261.model.Lab4Model;
 
@@ -37,7 +35,12 @@ public class Lab4Test extends TestCase {
       Lab4Model lab4Model = null;
       try {
         lab4Model = new Lab4Model();
-        Tester tester = new RandomTester(lab4Model);
+        //AllRoundTester tester = new AllRoundTester(lab4Model);
+        //tester.setLoopTolerance(10);
+        //GreedyTester tester = new GreedyTester(lab4Model);
+        LookaheadTester tester = new LookaheadTester(lab4Model);
+        tester.setDepth(100);
+        //RandomTester tester = new RandomTester(lab4Model);
 
         tester.buildGraph();
         tester.addListener(new VerboseListener());
@@ -45,8 +48,9 @@ public class Lab4Test extends TestCase {
         tester.addCoverageMetric(new TransitionCoverage());
         tester.addCoverageMetric(new StateCoverage());
         tester.addCoverageMetric(new ActionCoverage());
+        tester.addCoverageMetric(new TransitionPairCoverage());
 
-        tester.generate(2000);
+        tester.generate(2);
         tester.printCoverage();
       }
       catch (Exception e) {

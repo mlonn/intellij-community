@@ -770,9 +770,9 @@ public class DocumentationComponent extends JPanel implements Disposable, DataPr
     }
   }
 
-  private class EditDocumentationSourceAction extends BaseNavigateToSourceAction {
+  public class EditDocumentationSourceAction extends BaseNavigateToSourceAction {
 
-    private EditDocumentationSourceAction() {
+    public EditDocumentationSourceAction() {
       super(true);
       getTemplatePresentation().setIcon(AllIcons.Actions.EditSource);
       getTemplatePresentation().setText("Edit Source");

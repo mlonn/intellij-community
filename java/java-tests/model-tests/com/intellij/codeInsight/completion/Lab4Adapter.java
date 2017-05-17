@@ -15,59 +15,109 @@
  */
 package com.intellij.codeInsight.completion;
 
+import com.intellij.codeInsight.documentation.DocumentationManager;
+import com.intellij.codeInsight.hint.ImplementationViewComponent;
+import com.intellij.openapi.actionSystem.IdeActions;
+import com.intellij.openapi.editor.Caret;
+import com.intellij.psi.PsiElement;
+import com.intellij.testFramework.fixtures.JavaCodeInsightTestFixture;
+import org.jetbrains.annotations.Nullable;
 import se.chalmers.dat261.adapter.BaseAdapter;
+
+import java.util.concurrent.CountDownLatch;
 
 /**
  * Created by Mikae on 2017-05-03.
  */
 public class Lab4Adapter extends BaseAdapter {
+  protected JavaCodeInsightTestFixture myFixture;
+  Caret caret;
+  private DocumentationManager myDocumentationManager;
+
   public Lab4Adapter() throws Exception {
     super("/model-based/Lab4.java");
+    caret = getEditor().getCaretModel().getCurrentCaret();
   }
 
   public void cleanup() throws Exception {
-    tearDown(); // Otherwise IntelliJ will throw an exception regarding memory leakage, which will prevent tests from running green.
+    //tearDown(); // Otherwise IntelliJ will throw an exception regarding memory leakage, which will prevent tests from running green.
   }
 
-  public void caretToMethod() {
+  public String caretToMethod() {
+    caret.moveToOffset(688);
+    return wordUnderCaret();
   }
 
-  public void caretToClass() {
+  public String caretToClass() {
+    caret.moveToOffset(740);
+    return wordUnderCaret();
   }
 
-  public void caretToTag() {
+  public String caretToTag() {
+    caret.moveToOffset(668);
+    return wordUnderCaret();
   }
 
-  public void caretToVariable() {
+  public String caretToVariable() {
+    caret.moveToOffset(745);
+    return wordUnderCaret();
   }
 
-  public void caretToJavaDoc() {
+  public String caretToJavaDoc() {
+    caret.moveToOffset(216);
+    return wordUnderCaret();
   }
 
-  public void caretToNothing() {
+  public String caretToNothing() {
+    caret.moveToOffset(660);
+    return "";
   }
 
-  public int showDefinition() {
-    return 0;
+  public String showDefinition() {
+
+    myDocumentationManager = DocumentationManager.getInstance(getProject());
+
+    PsiElement elem = myDocumentationManager.findTargetElement(getEditor(), getFile());
+    final String s = ImplementationViewComponent.getNewText(elem);
+    return s;
   }
 
-  public void showDocumentation() {
+  @Nullable
+  private String getDocFromWindow(PsiElement elem, PsiElement oelem) {
+    final CountDownLatch latch = new CountDownLatch(1);
+    final String[] s = new String[1];
+    Thread t = new Thread("name") {
+      @Override
+      public void run() {
+        super.run();
+        try {
+          s[0] = myDocumentationManager.getDefaultCollector(elem, oelem).getDocumentation();
+          latch.countDown();
+        }
+        catch (Exception e) {
+          e.printStackTrace();
+        }
+      }
+    };
+    t.start();
+    try {
+      latch.await();
+      return s[0];
+    }
+    catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    return null;
   }
 
-  public void closeDefinition() {
-  }
+  public String showDocumentation() {
 
-  public void closeDocumentation() {
-  }
+    invokeAction(IdeActions.ACTION_QUICK_JAVADOC);
 
-  public void editSouce() {
-  }
+    myDocumentationManager = DocumentationManager.getInstance(getProject());
 
-  public int selectFromDropList() {
-    return  0;
-  }
-
-  public int getCurrentFile(int file) {
-    return 0;
+    PsiElement elem = myDocumentationManager.findTargetElement(getEditor(), getFile());
+    PsiElement oelem = myFile.getOriginalElement();
+    return getDocFromWindow(elem, oelem);
   }
 }

@@ -13,20 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import java.io.File
 
-import java.io.File;
+public class Lab4 extends lab4Super {
 
-public class lab4Super {
-  /**
-   *
-   * @return an int
-   */
+  @Override
   public int foo() {
-    <caret>
+     
   }
 
   public void multiImpl () {
     File file = new File();
   }
-
+  abstract void bar();
 }

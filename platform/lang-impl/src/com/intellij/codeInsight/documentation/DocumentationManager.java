@@ -651,7 +651,7 @@ public class DocumentationManager extends DockablePopupManager<DocumentationComp
     return myPreviouslyFocused != null && myPreviouslyFocused.getParent() instanceof ChooseByNameBase.JPanelProvider;
   }
 
-  private DocumentationCollector getDefaultCollector(@NotNull final PsiElement element, @Nullable final PsiElement originalElement) {
+  public DocumentationCollector getDefaultCollector(@NotNull final PsiElement element, @Nullable final PsiElement originalElement) {
     return new DefaultDocumentationCollector(element, originalElement);
   }
 
@@ -1075,7 +1075,7 @@ public class DocumentationManager extends DockablePopupManager<DocumentationComp
     myTestDocumentationComponent = documentationComponent;
   }
 
-  private interface DocumentationCollector {
+  public interface DocumentationCollector {
     @Nullable
     String getDocumentation() throws Exception;
     @Nullable

@@ -15,10 +15,15 @@
  */
 package se.chalmers.dat261.model;
 
+import com.intellij.JavaTestUtil;
 import com.intellij.codeInsight.completion.Lab4Adapter;
-import com.intellij.codeInsight.completion.NextPrevParameterAction;
+import com.intellij.openapi.util.io.FileUtil;
+import com.intellij.openapi.util.text.StringUtil;
 import nz.ac.waikato.modeljunit.Action;
 import nz.ac.waikato.modeljunit.FsmModel;
+
+import java.io.File;
+import java.io.IOException;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -29,26 +34,23 @@ import static junit.framework.TestCase.assertEquals;
 public class Lab4Model implements FsmModel {
   private Window window = Window.Editor;
   private Caret caret = Caret.Nothing;
-  private Caret currentDocPage = Caret.Nothing;
-  private int nbrFiles = 0;
-  private int currentFile = -1;
   private Lab4Adapter adapter;
-
-  private enum Window {Definition, Documentation, Editor}
-
-  ;
-
-  private enum Caret {Method, Class, Tag, Variable, JavaDoc, Nothing}
 
   public Lab4Model() throws Exception {
     adapter = new Lab4Adapter();
   }
 
+  private static File getDataFile(String name) {
+    return new File(JavaTestUtil.getJavaTestDataPath() + name);
+  }
+
   @Action
   public void caretToMethod() {
-    adapter.caretToMethod();
+    String actual = adapter.caretToMethod();
+    String expected = "foo";
     caret = Caret.Method;
     window = Window.Editor;
+    assertEquals(expected, actual);
   }
 
   public boolean caretToMethodGuard() {
@@ -57,9 +59,11 @@ public class Lab4Model implements FsmModel {
 
   @Action
   public void caretToClass() {
-    adapter.caretToClass();
+    String actual = adapter.caretToClass();
+    String expected = "File";
     caret = Caret.Class;
     window = Window.Editor;
+    assertEquals(expected, actual);
   }
 
   public boolean caretToClassGuard() {
@@ -68,9 +72,11 @@ public class Lab4Model implements FsmModel {
 
   @Action
   public void caretToTag() {
-    adapter.caretToTag();
+    String actual = adapter.caretToTag();
+    String expected = "Override";
     caret = Caret.Tag;
     window = Window.Editor;
+    assertEquals(expected, actual);
   }
 
   public boolean caretToTagGuard() {
@@ -79,9 +85,11 @@ public class Lab4Model implements FsmModel {
 
   @Action
   public void caretToVariable() {
-    adapter.caretToVariable();
+    String actual = adapter.caretToVariable();
+    String expected = "file";
     caret = Caret.Variable;
     window = Window.Editor;
+    assertEquals(expected, actual);
   }
 
   public boolean caretToVariableGuard() {
@@ -90,9 +98,11 @@ public class Lab4Model implements FsmModel {
 
   @Action
   public void caretToJavaDoc() {
-    adapter.caretToJavaDoc();
+    String actual = adapter.caretToJavaDoc();
+    String expected = "License";
     caret = Caret.JavaDoc;
     window = Window.Editor;
+    assertEquals(expected, actual);
   }
 
   public boolean caretToJavaDocGuard() {
@@ -101,9 +111,11 @@ public class Lab4Model implements FsmModel {
 
   @Action
   public void caretToNothing() {
-    adapter.caretToNothing();
+    String actual = adapter.caretToNothing();
+    String expected = "";
     caret = Caret.Nothing;
     window = Window.Editor;
+    assertEquals(expected, actual);
   }
 
   public boolean caretToNothingGuard() {
@@ -112,17 +124,24 @@ public class Lab4Model implements FsmModel {
 
   @Action
   public void showDefinition() {
-    nbrFiles = adapter.showDefinition();
+    String actual = adapter.showDefinition();
+    String expected = "";
+    try {
+      expected = StringUtil.convertLineSeparators(FileUtil.loadFile(getDataFile("/model-based/" + caret.text + "_definition.txt")));
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
     window = Window.Definition;
+    assertEquals(expected, actual);
   }
 
   public boolean showDefinitionGuard() {
-    return window == Window.Editor && caret != Caret.Nothing;
+    return window == Window.Editor && caret != Caret.Nothing && caret != Caret.Tag;
   }
 
   @Action
   public void closeDefinition() {
-    adapter.closeDefinition();
     window = Window.Editor;
   }
 
@@ -131,40 +150,17 @@ public class Lab4Model implements FsmModel {
   }
 
   @Action
-  public void selectFromDropList() {
-    currentFile = adapter.selectFromDropList();
-  }
-
-  public boolean selectFromDropListGuard() {
-    return window == Window.Definition && nbrFiles > 1;
-  }
-
-  @Action
-  public void nextFile() {
-    currentFile++;
-    adapter.getCurrentFile(currentFile);
-  }
-
-  public boolean nextFileGuard() {
-    return window == Window.Definition && nbrFiles > 1 && currentFile < nbrFiles - 1;
-  }
-
-  @Action
-  public void previousFile() {
-    currentFile--;
-    adapter.getCurrentFile(currentFile);
-  }
-
-  public boolean previousFileGuard() {
-    return window == Window.Definition && currentFile > 0;
-  }
-
-  @Action
-
   public void showDocumentation() {
-    adapter.showDocumentation();
+    String actual = adapter.showDocumentation();
+    String expected = "";
+    try {
+      expected = StringUtil.convertLineSeparators(FileUtil.loadFile(getDataFile("/model-based/" + caret.text + "_documentation.html")));
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
     window = Window.Documentation;
-    currentDocPage = caret;
+    assertEquals(expected, actual);
   }
 
   public boolean showDocumentationGuard() {
@@ -173,59 +169,10 @@ public class Lab4Model implements FsmModel {
 
   @Action
   public void closeDocumentation() {
-    adapter.closeDocumentation();
-    currentDocPage = Caret.Nothing;
     window = Window.Editor;
   }
 
   public boolean closeDocumentationGuard() {
-    return window == Window.Documentation;
-  }
-
-  @Action
-  public void editSource() {
-    adapter.editSouce();
-    caret = currentDocPage;
-    currentDocPage = Caret.Nothing;
-  }
-
-  public boolean editSourceGuard() {
-    return window == Window.Documentation;
-  }
-
-  @Action
-  public void linkToMethod() {
-    currentDocPage = Caret.Method;
-  }
-
-  public boolean linkToMethodGuard() {
-    return window == Window.Documentation;
-  }
-
-  @Action
-  public void linkToClass() {
-    currentDocPage = Caret.Class;
-  }
-
-  public boolean linkToClassGuard() {
-    return window == Window.Documentation;
-  }
-
-  @Action
-  public void linkToTag() {
-    currentDocPage = Caret.Tag;
-  }
-
-  public boolean linkToTagGuard() {
-    return window == Window.Documentation;
-  }
-
-  @Action
-  public void linkToVariable() {
-    currentDocPage = Caret.Variable;
-  }
-
-  public boolean linkToMethodVariable() {
     return window == Window.Documentation;
   }
 
@@ -236,11 +183,27 @@ public class Lab4Model implements FsmModel {
 
   @Override
   public void reset(boolean b) {
-    window = Window.Editor;
     caret = Caret.Nothing;
+    window = Window.Editor;
   }
 
-  public void cleanup() throws Exception {
-    adapter.cleanup();
+  public void cleanup() {
+    try {
+      adapter.cleanup();
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  private enum Window {Definition, Documentation, Editor}
+
+  private enum Caret {
+    Method("method"), Class("class"), Tag("tag"), Variable("variable"), JavaDoc("javadoc"), Nothing("nothing");
+    private String text;
+
+    Caret(String text) {
+      this.text = text;
+    }
   }
 }
